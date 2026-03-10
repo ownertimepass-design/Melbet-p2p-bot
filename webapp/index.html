@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Melbet Affiliate</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--y:#FFC323;--y2:#e6a800;--bg:#0d0d0f;--bg2:#1a1a1f;--bg3:#222228;--txt:#fff;--txt2:#888;--bdr:rgba(255,255,255,0.08)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden}
+.page{display:none;flex-direction:column;min-height:100vh}
+.page.active{display:flex;animation:fi .2s ease}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.logo-bar{text-align:center;padding:22px 16px 8px}
+.logo-m{font-size:38px;font-weight:900;color:var(--y);font-style:italic;font-family:Arial,sans-serif}
+.logo-e{font-size:38px;font-weight:900;color:#fff;font-style:italic;font-family:Arial,sans-serif}
+.home-title{text-align:center;font-size:26px;font-weight:700;padding:6px 16px 22px}
+.menu-list{padding:0 16px;display:flex;flex-direction:column;gap:10px}
+.menu-item{background:var(--bg2);border-radius:16px;padding:18px;display:flex;align-items:center;gap:16px;cursor:pointer;border:1px solid var(--bdr)}
+.menu-item:active{background:var(--bg3)}
+.menu-ico{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,var(--y),var(--y2));display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.mt{font-size:17px;font-weight:600;margin-bottom:3px}
+.ms{font-size:13px;color:var(--txt2)}
+.home-links{display:flex;justify-content:center;gap:40px;padding:28px 16px 20px}
+.home-link{color:var(--txt2);font-size:15px;cursor:pointer;background:none;border:none;font-family:inherit}
+.inner-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 10px}
+.back-btn{width:36px;height:36px;background:none;border:none;color:var(--txt);font-size:28px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.inner-title{font-size:22px;font-weight:700;flex:1;text-align:center}
+.home-btn{width:40px;height:40px;background:var(--y);border:none;border-radius:50%;color:#111;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.cat-list{padding:0 16px;display:flex;flex-direction:column;gap:8px}
+.cat-item{background:var(--bg2);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:16px;cursor:pointer;transition:all .15s}
+.cat-item.sel{border-color:var(--y);background:rgba(255,195,35,.06)}
+.cat-ico{width:52px;height:52px;border-radius:14px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.cat-txt{flex:1}.cat-tt{font-size:16px;font-weight:600;margin-bottom:3px}.cat-ds{font-size:12px;color:var(--txt2)}
+.cat-radio{width:24px;height:24px;border:2px solid var(--y);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cat-item.sel .cat-radio::after{content:'';width:10px;height:10px;background:var(--y);border-radius:50%;display:block}
+.lang-wrap{padding:0 16px}
+.lang-drop{background:var(--bg2);border:1px solid var(--bdr);border-radius:14px;overflow:hidden}
+.lang-hdr{padding:18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:16px;color:var(--txt2)}
+.lang-hdr.open{color:var(--txt)}
+.lang-arr{transition:transform .25s}
+.lang-hdr.open .lang-arr{transform:rotate(180deg)}
+.lang-opts{max-height:0;overflow:hidden;transition:max-height .3s}
+.lang-opts.open{max-height:500px}
+.lang-opt{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:15px;border-top:1px solid var(--bdr)}
+.lang-opt:active{background:var(--bg3)}
+.lang-radio{width:22px;height:22px;border:2px solid var(--y);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.lang-opt.sel .lang-radio::after{content:'';width:9px;height:9px;background:var(--y);border-radius:50%;display:block}
+.promo-card{margin:16px;background:var(--bg2);border:1px solid var(--bdr);border-radius:16px;padding:28px 20px}
+.promo-card h2{font-size:22px;font-weight:700;margin-bottom:6px}
+.promo-card p{font-size:14px;color:var(--txt2);margin-bottom:22px}
+.pinp-wrap{position:relative}
+.pinp{width:100%;background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;padding:16px 72px 16px 16px;color:var(--txt);font-size:20px;font-weight:700;letter-spacing:4px;outline:none;text-transform:uppercase;font-family:inherit}
+.pinp:focus{border-color:var(--y)}
+.pinp::placeholder{letter-spacing:0;font-size:14px;font-weight:400;color:var(--txt2)}
+.paste-btn{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--y);font-size:15px;font-weight:700;cursor:pointer}
+.promo-note{font-size:12px;color:var(--txt2);margin-top:10px}
+.bottom-btn{position:sticky;bottom:0;padding:12px 16px 28px;background:linear-gradient(to top,var(--bg) 65%,transparent)}
+.btn-main{width:100%;padding:18px;background:var(--y);border:none;border-radius:16px;color:#111;font-size:17px;font-weight:800;cursor:pointer;font-family:inherit}
+.btn-main:active{opacity:.85}
+.btn-skip{width:100%;padding:14px;background:transparent;border:none;color:var(--txt2);font-size:15px;cursor:pointer;font-family:inherit;margin-top:6px}
+.sending{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;align-items:center;justify-content:center}
+.sending.show{display:flex}
+.send-box{background:var(--bg2);border-radius:20px;padding:40px 32px;text-align:center;width:78%}
+.spinner{width:52px;height:52px;border:4px solid var(--bdr);border-top-color:var(--y);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 18px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.send-box h3{font-size:18px;font-weight:600;margin-bottom:6px}
+.send-box p{font-size:13px;color:var(--txt2)}
+.contact-hero{margin:16px 16px 12px;background:linear-gradient(135deg,#1a1200,#2a1e00);border:1px solid rgba(255,195,35,.2);border-radius:18px;padding:30px 20px;text-align:center}
+.c-ico{font-size:60px;margin-bottom:12px}
+.contact-hero h2{font-size:22px;font-weight:700;margin-bottom:6px}
+.contact-hero p{font-size:14px;color:var(--txt2)}
+.info-box{margin:0 16px 12px;background:var(--bg2);border:1px solid var(--bdr);border-radius:14px;padding:4px 16px}
+.info-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--bdr);font-size:14px}
+.info-row:last-child{border:none}
+.i-lbl{color:var(--txt2);width:90px;flex-shrink:0;font-size:13px}.i-val{font-weight:600}
+.tg-link{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 16px 20px;padding:18px;background:var(--y);border:none;border-radius:14px;color:#111;font-size:16px;font-weight:800;text-decoration:none}
+.aff-hero{margin:16px 16px 12px;background:linear-gradient(135deg,#1a1200,#2a1e00);border:1px solid rgba(255,195,35,.2);border-radius:18px;padding:28px 20px;text-align:center}
+.a-ico{font-size:56px;margin-bottom:10px}
+.aff-hero h2{font-size:24px;font-weight:700;margin-bottom:8px}
+.aff-hero p{font-size:14px;color:var(--txt2);line-height:1.7;margin-bottom:20px}
+.aff-join{display:inline-block;background:var(--y);color:#111;padding:14px 36px;border-radius:12px;font-weight:800;font-size:16px;text-decoration:none}
+.feat-list{padding:0 16px;display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.feat{background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px}
+.feat-i{width:42px;height:42px;background:rgba(255,195,35,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.ft{font-weight:600;font-size:14px;margin-bottom:2px}.fs{font-size:12px;color:var(--txt2)}
+.faq-item{margin:0 16px 8px;background:var(--bg2);border:1px solid var(--bdr);border-radius:12px;overflow:hidden}
+.faq-q{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-size:14px;font-weight:500;gap:12px}
+.faq-a{max-height:0;overflow:hidden;transition:all .3s;font-size:13px;color:var(--txt2);line-height:1.7}
+.faq-a.open{max-height:300px;padding:0 18px 14px}
+.faq-icon{color:var(--y);font-size:22px;transition:transform .3s;flex-shrink:0;font-style:normal}
+.faq-q.open .faq-icon{transform:rotate(45deg)}
+.sp{height:32px}
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<div class="page active" id="p-home">
+  <div class="logo-bar"><span class="logo-m">M</span><span class="logo-e">ELBET</span></div>
+  <div class="home-title">Affiliate</div>
+  <div class="menu-list">
+    <div class="menu-item" onclick="go('p-cat')">
+      <div class="menu-ico">🖼️</div>
+      <div><div class="mt">Get banner</div><div class="ms">Download banners with your promo code</div></div>
+    </div>
+    <div class="menu-item" onclick="go('p-contact')">
+      <div class="menu-ico">💬</div>
+      <div><div class="mt">Request manager</div><div class="ms">To start work or resolve an issue</div></div>
+    </div>
+    <div class="menu-item" onclick="go('p-affiliate')">
+      <div class="menu-ico">🤝</div>
+      <div><div class="mt">Become affiliate partner</div><div class="ms">Join Melbet affiliate program</div></div>
+    </div>
+  </div>
+  <div class="home-links">
+    <button class="home-link" onclick="go('p-faq')">FAQ</button>
+    <button class="home-link" onclick="go('p-contact')">Support</button>
+  </div>
+  <div class="sp"></div>
+</div>
+
+<!-- CATEGORY -->
+<div class="page" id="p-cat">
+  <div class="logo-bar"><span class="logo-m">M</span><span class="logo-e">ELBET</span></div>
+  <div class="inner-hdr">
+    <button class="back-btn" onclick="go('p-home')">‹</button>
+    <div class="inner-title">Get banner</div>
+    <button class="home-btn" onclick="go('p-home')">🏠</button>
+  </div>
+  <div class="cat-list">
+    <div class="cat-item" onclick="selCat(this,'sport')"><div class="cat-ico">⚽</div><div class="cat-txt"><div class="cat-tt">Basic sport banners</div><div class="cat-ds">Basic banners for sports</div></div><div class="cat-radio"></div></div>
+    <div class="cat-item" onclick="selCat(this,'bonus')"><div class="cat-ico">🎁</div><div class="cat-txt"><div class="cat-tt">Basic bonus banners</div><div class="cat-ds">Basic banners for freebet Bonus</div></div><div class="cat-radio"></div></div>
+    <div class="cat-item" onclick="selCat(this,'casino')"><div class="cat-ico">🎰</div><div class="cat-txt"><div class="cat-tt">Basic casino banners</div><div class="cat-ds">Basic banners for casino</div></div><div class="cat-radio"></div></div>
+    <div class="cat-item" onclick="selCat(this,'esport')"><div class="cat-ico">🎮</div><div class="cat-txt"><div class="cat-tt">Basic e-sport banners</div><div class="cat-ds">Basic banners for e-sport</div></div><div class="cat-radio"></div></div>
+    <div class="cat-item" onclick="selCat(this,'epl')"><div class="cat-ico">🦁</div><div class="cat-txt"><div class="cat-tt" style="color:var(--y)">EPL weekly matches</div><div class="cat-ds">English Premier League</div></div><div class="cat-radio"></div></div>
+    <div class="cat-item" onclick="selCat(this,'champions')"><div class="cat-ico">🏆</div><div class="cat-txt"><div class="cat-tt">Champions League</div><div class="cat-ds">UEFA Champions League</div></div><div class="cat-radio"></div></div>
+    <div class="cat-item" onclick="selCat(this,'cricket')"><div class="cat-ico">🏏</div><div class="cat-txt"><div class="cat-tt">Cricket matches</div><div class="cat-ds">IPL, BPL, World Cup</div></div><div class="cat-radio"></div></div>
+    <div class="cat-item" onclick="selCat(this,'ipl')"><div class="cat-ico">🔥</div><div class="cat-txt"><div class="cat-tt">IPL matches</div><div class="cat-ds">Indian Premier League</div></div><div class="cat-radio"></div></div>
+  </div>
+  <div class="bottom-btn"><button class="btn-main" onclick="nextCat()">Next</button></div>
+</div>
+
+<!-- LANGUAGE -->
+<div class="page" id="p-lang">
+  <div class="logo-bar"><span class="logo-m">M</span><span class="logo-e">ELBET</span></div>
+  <div class="inner-hdr">
+    <button class="back-btn" onclick="go('p-cat')">‹</button>
+    <div class="inner-title">Get banner</div>
+    <button class="home-btn" onclick="go('p-home')">🏠</button>
+  </div>
+  <div class="lang-wrap">
+    <div class="lang-drop">
+      <div class="lang-hdr" id="lhdr" onclick="toggleDrop()">
+        <span id="lsel">Select language</span><span class="lang-arr">▾</span>
+      </div>
+      <div class="lang-opts" id="lopts">
+        <div class="lang-opt sel" onclick="selLang(this,'bn')"><span>Bengali</span><div class="lang-radio"></div></div>
+        <div class="lang-opt" onclick="selLang(this,'en')"><span>English</span><div class="lang-radio"></div></div>
+        <div class="lang-opt" onclick="selLang(this,'ar')"><span>Arabic</span><div class="lang-radio"></div></div>
+        <div class="lang-opt" onclick="selLang(this,'fr')"><span>French</span><div class="lang-radio"></div></div>
+        <div class="lang-opt" onclick="selLang(this,'id')"><span>Indonesian</span><div class="lang-radio"></div></div>
+        <div class="lang-opt" onclick="selLang(this,'ru')"><span>Russian</span><div class="lang-radio"></div></div>
+        <div class="lang-opt" onclick="selLang(this,'tr')"><span>Turkish</span><div class="lang-radio"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-btn"><button class="btn-main" onclick="go('p-promo')">Next</button></div>
+</div>
+
+<!-- PROMO -->
+<div class="page" id="p-promo">
+  <div class="logo-bar"><span class="logo-m">M</span><span class="logo-e">ELBET</span></div>
+  <div class="inner-hdr">
+    <button class="back-btn" onclick="go('p-lang')">‹</button>
+    <div class="inner-title">Get banner</div>
+    <button class="home-btn" onclick="go('p-home')">🏠</button>
+  </div>
+  <div class="promo-card">
+    <h2>Enter your promo code</h2>
+    <p>To get the banners</p>
+    <div class="pinp-wrap">
+      <input class="pinp" id="pinp" type="text" placeholder="Your promo code..." maxlength="20"
+        oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9]/g,'')">
+      <button class="paste-btn" onclick="pasteCode()">paste</button>
+    </div>
+    <div class="promo-note">Up to 20 Latin letters. No spaces or special characters.</div>
+  </div>
+  <div class="bottom-btn">
+    <button class="btn-main" onclick="sendToBot()">Get Banners ✓</button>
+    <button class="btn-skip" onclick="skipPromo()">Skip</button>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="p-contact">
+  <div class="logo-bar"><span class="logo-m">M</span><span class="logo-e">ELBET</span></div>
+  <div class="inner-hdr">
+    <button class="back-btn" onclick="go('p-home')">‹</button>
+    <div class="inner-title">Support</div>
+    <button class="home-btn" onclick="go('p-home')">🏠</button>
+  </div>
+  <div class="contact-hero">
+    <div class="c-ico">👨‍💼</div>
+    <h2>Official Manager</h2>
+    <p>Melbet Bangladesh অফিসিয়াল ম্যানেজার</p>
+  </div>
+  <div class="info-box">
+    <div class="info-row"><span class="i-lbl">✈️ Telegram</span><span class="i-val">@Melbet_BdManager</span></div>
+    <div class="info-row"><span class="i-lbl">🕐 Available</span><span class="i-val">24/7</span></div>
+    <div class="info-row"><span class="i-lbl">🌍 Language</span><span class="i-val">বাংলা / English</span></div>
+    <div class="info-row"><span class="i-lbl">⚡ Response</span><span class="i-val">তাৎক্ষণিক</span></div>
+  </div>
+  <a href="https://t.me/Melbet_BdManager" class="tg-link">✈️ Contact — @Melbet_BdManager</a>
+  <div class="sp"></div>
+</div>
+
+<!-- AFFILIATE -->
+<div class="page" id="p-affiliate">
+  <div class="logo-bar"><span class="logo-m">M</span><span class="logo-e">ELBET</span></div>
+  <div class="inner-hdr">
+    <button class="back-btn" onclick="go('p-home')">‹</button>
+    <div class="inner-title">Affiliate</div>
+    <button class="home-btn" onclick="go('p-home')">🏠</button>
+  </div>
+  <div class="aff-hero">
+    <div class="a-ico">🤝</div>
+    <h2>Melbet Affiliate Program</h2>
+    <p>রেজিস্ট্রেশন করুন এবং প্রতিটি রেফারেল থেকে আয় করুন!</p>
+    <a href="https://bit.ly/Official_melbetaffiliates" class="aff-join">🚀 Join Now</a>
+  </div>
+  <div class="feat-list">
+    <div class="feat"><div class="feat-i">💰</div><div><div class="ft">Revenue Share</div><div class="fs">প্রতি রেফারেল থেকে % কমিশন</div></div></div>
+    <div class="feat"><div class="feat-i">📊</div><div><div class="ft">Live Dashboard</div><div class="fs">Real-time statistics</div></div></div>
+    <div class="feat"><div class="feat-i">🎯</div><div><div class="ft">Marketing Materials</div><div class="fs">ব্যানার, ভিডিও, প্রমো কোড</div></div></div>
+    <div class="feat"><div class="feat-i">💳</div><div><div class="ft">Fast Payment</div><div class="fs">bKash, Nagad, USDT</div></div></div>
+  </div>
+  <div class="sp"></div>
+</div>
+
+<!-- FAQ -->
+<div class="page" id="p-faq">
+  <div class="logo-bar"><span class="logo-m">M</span><span class="logo-e">ELBET</span></div>
+  <div class="inner-hdr">
+    <button class="back-btn" onclick="go('p-home')">‹</button>
+    <div class="inner-title">FAQ</div>
+    <button class="home-btn" onclick="go('p-home')">🏠</button>
+  </div>
+  <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span>Affiliate কীভাবে হব?</span><i class="faq-icon">+</i></div><div class="faq-a">Melbet affiliate লিংকে গিয়ে রেজিস্ট্রেশন করুন। তারপর @Melbet_BdManager-এর সাথে যোগাযোগ করুন।</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span>প্রমো কোড কোথায় পাব?</span><i class="faq-icon">+</i></div><div class="faq-a">Melbet affiliate dashboard থেকে আপনার ব্যক্তিগত প্রমো কোড পাবেন।</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span>ব্যানার কীভাবে ডাউনলোড হবে?</span><i class="faq-icon">+</i></div><div class="faq-a">Promo code দিয়ে "Get Banners" চাপুন — Telegram chat-এ ZIP file আসবে। সেখান থেকে Download করুন।</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span>কমিশন কত পাব?</span><i class="faq-icon">+</i></div><div class="faq-a">Revenue share model-এ কাজ করে। বিস্তারিত জানতে @Melbet_BdManager-এর সাথে যোগাযোগ করুন।</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="tfaq(this)"><span>পেমেন্ট কীভাবে পাব?</span><i class="faq-icon">+</i></div><div class="faq-a">bKash, Nagad বা USDT — যেকোনো মাধ্যমে পেমেন্ট নিতে পারবেন।</div></div>
+  <div class="sp"></div>
+</div>
+
+<!-- SENDING MODAL -->
+<div class="sending" id="sending">
+  <div class="send-box">
+    <div class="spinner"></div>
+    <h3>ব্যানার তৈরি হচ্ছে</h3>
+    <p>Telegram-এ ZIP আসবে...</p>
+  </div>
+</div>
+
+<script>
+const tg = window.Telegram?.WebApp;
+if(tg){ tg.ready(); tg.expand(); }
+
+let cat='', lang='bn';
+
+function go(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function selCat(el,c){
+  document.querySelectorAll('.cat-item').forEach(i=>i.classList.remove('sel'));
+  el.classList.add('sel'); cat=c;
+}
+function nextCat(){
+  if(!cat){alert('একটি category সিলেক্ট করুন!');return;}
+  go('p-lang');
+}
+let dOpen=false;
+function toggleDrop(){
+  dOpen=!dOpen;
+  document.getElementById('lhdr').classList.toggle('open',dOpen);
+  document.getElementById('lopts').classList.toggle('open',dOpen);
+}
+function selLang(el,l){
+  document.querySelectorAll('.lang-opt').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel'); lang=l;
+  document.getElementById('lsel').textContent=el.querySelector('span').textContent;
+  toggleDrop();
+}
+async function pasteCode(){
+  try{
+    const t=await navigator.clipboard.readText();
+    document.getElementById('pinp').value=t.toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,20);
+  }catch(e){}
+}
+function sendToBot(){
+  const promo=document.getElementById('
